@@ -1,0 +1,12 @@
+FROM openjdk:11
+
+# dist copy
+WORKDIR /
+COPY ./dist/TeamCity ./TeamCity
+
+# TeamCity Setup
+EXPOSE 8111
+
+ENV TEAMCITY_DATA_PATH /data/teamcity_server/datadir
+
+ENTRYPOINT ["./TeamCity/bin/teamcity-server.sh","run"]

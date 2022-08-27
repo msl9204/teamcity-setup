@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  teamcity-server:
+    image: teamcity-test
+    ports:
+      - "8111:8111"
+    volumes:
+      - ./data:/data/teamcity_server/datadir
+      - ./teamcity-server-logs:/TeamCity/logs
+
+  teamcity-agent:
+    image: agent-test
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./teamcity-agent-logs:/TeamAgent/logs

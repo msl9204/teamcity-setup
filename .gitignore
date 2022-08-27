@@ -1,0 +1,6 @@
+.DS_Store
+.history
+dist
+/data
+/teamcity-server-logs
+/teamcity-agent-logs
