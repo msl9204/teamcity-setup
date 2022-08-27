@@ -8,6 +8,9 @@ services:
     volumes:
       - ./data:/data/teamcity_server/datadir
       - ./teamcity-server-logs:/TeamCity/logs
+    environment:
+      - "TZ=Asia/Seoul"
+
 
   teamcity-agent:
     image: agent-test
@@ -15,3 +18,6 @@ services:
       - "9090:9090"
     volumes:
       - ./teamcity-agent-logs:/TeamAgent/logs
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - "TZ=Asia/Seoul"
