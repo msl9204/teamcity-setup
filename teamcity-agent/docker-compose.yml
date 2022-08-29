@@ -9,4 +9,5 @@ services:
       - ./teamcity-agent-logs:/TeamAgent/logs
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - "TZ=Asia/Seoul"
+      - TZ=Asia/Seoul
+      - SERVER_URL=http://192.168.0.20:8111/

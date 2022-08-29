@@ -45,7 +45,6 @@ WORKDIR /
 COPY ./dist/Agent ./TeamAgent
 
 # extra
-COPY ./teamcity-agent-conf/buildAgent.properties /TeamAgent/conf
 COPY ./teamcity-agent-conf/start.sh /
 
 ENTRYPOINT ./start.sh
