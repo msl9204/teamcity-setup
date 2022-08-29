@@ -3,11 +3,16 @@ version: '3.4'
 services:
   teamcity-agent:
     image: teamcity-agent
+    user: '0'
     ports:
       - "9090:9090"
     volumes:
-      - ./teamcity-agent-logs:/TeamAgent/logs
       - /var/run/docker.sock:/var/run/docker.sock
+      - teamcity_volume:/buildagent
+
     environment:
       - TZ=Asia/Seoul
-      - SERVER_URL=http://192.168.0.20:8111/
+      - SERVER_URL=http://192.168.0.10:8111/
+
+volumes:
+  teamcity_volume:

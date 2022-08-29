@@ -1,6 +1,8 @@
 .DS_Store
 .history
 dist
-/data
-/teamcity-server-logs
-/teamcity-agent-logs
+data
+teamcity-server-logs
+teamcity-agent-logs
+mysql-data
+buildagent

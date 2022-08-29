@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t teamcity-test -f Dockerfile.server .
+docker build -t teamcity-server -f Dockerfile.server .

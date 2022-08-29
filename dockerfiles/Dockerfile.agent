@@ -1,5 +1,7 @@
 FROM ubuntu:20.04
 
+CMD bash
+
 RUN apt-get update 
 RUN apt-get upgrade -y
 
@@ -42,7 +44,7 @@ RUN systemctl enable containerd.service
 WORKDIR /
 
 # dist copy
-COPY ./dist/Agent ./TeamAgent
+COPY ./dist/Agent ./buildagent
 
 # extra
 COPY ./teamcity-agent-conf/start.sh /
