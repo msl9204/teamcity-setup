@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  teamcity-server:
+    image: teamcity-test
+    ports:
+      - "8111:8111"
+    volumes:
+      - ./data:/data/teamcity_server/datadir
+      - ./teamcity-server-logs:/TeamCity/logs
+    environment:
+      - "TZ=Asia/Seoul"
+    depends_on:
+      - teamcity-mysql
+  restart: always
+  
+  teamcity-mysql:
+    image: mysql:latest
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./init/:/docker-entrypoint-initdb.d/
+    environment:
+      - MYSQL_ROOT_PASSWORD=teamcity
+      - MYSQL_DATABASE=teamcity
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    restart: always
