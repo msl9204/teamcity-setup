@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t agent-test -f Dockerfile.agent .
+docker build -t teamcity-agent -f Dockerfile.agent .
