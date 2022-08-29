@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   teamcity-server:
-    image: teamcity-test
+    image: teamcity-server
     ports:
       - "8111:8111"
     volumes:
@@ -12,10 +12,12 @@ services:
       - "TZ=Asia/Seoul"
     depends_on:
       - teamcity-mysql
-  restart: always
-  
+    restart: always
+
   teamcity-mysql:
     image: mysql:latest
+    ports:
+      - "8112:3306"
     volumes:
       - ./mysql-data:/var/lib/mysql
       - ./init/:/docker-entrypoint-initdb.d/

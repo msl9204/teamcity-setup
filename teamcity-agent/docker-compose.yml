@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   teamcity-agent:
-    image: agent-test
+    image: teamcity-agent
     ports:
       - "9090:9090"
     volumes:
