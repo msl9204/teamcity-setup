@@ -7,13 +7,13 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - /opt/buildagent/logs:/buildagent/logs
+      - /opt/buildagent/logs:/opt/buildagent/logs
       - /var/run/docker.sock:/var/run/docker.sock
-      - /opt/buildagent/work:/buildagent/work
-      - /opt/buildagent/temp:/buildagent/temp
-      - /opt/buildagent/tools:/buildagent/tools
-      - /opt/buildagent/plugins:/buildagent/plugins
-      - /opt/buildagent/system:/buildagent/system
+      - /opt/buildagent/work:/opt/buildagent/work
+      - /opt/buildagent/temp:/opt/buildagent/temp
+      - /opt/buildagent/tools:/opt/buildagent/tools
+      - /opt/buildagent/plugins:/opt/buildagent/plugins
+      - /opt/buildagent/system:/opt/buildagent/system
 
     environment:
       - TZ=Asia/Seoul

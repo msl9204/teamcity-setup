@@ -53,7 +53,7 @@ VOLUME [/opt/buildagent/system]
 WORKDIR /
 
 # dist copy
-COPY ./dist/Agent ./buildagent
+COPY ./dist/Agent /opt/buildagent
 
 # extra
 COPY ./teamcity-agent-conf/start.sh /
