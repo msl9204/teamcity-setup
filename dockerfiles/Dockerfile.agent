@@ -41,8 +41,6 @@ RUN systemctl enable docker.service
 RUN systemctl enable containerd.service
 ##
 
-USER buildagent
-
 VOLUME [/opt/buildagent/logs]
 VOLUME [/opt/buildagent/work]
 VOLUME [/opt/buildagent/temp]
@@ -57,7 +55,5 @@ COPY ./dist/Agent /opt/buildagent
 
 # extra
 COPY ./teamcity-agent-conf/start.sh /
-
-USER root
 
 ENTRYPOINT ./start.sh
