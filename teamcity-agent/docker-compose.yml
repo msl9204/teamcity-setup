@@ -7,6 +7,7 @@ services:
     ports:
       - "9090:9090"
     volumes:
+      - /opt/buildagent/logs:/buildagent/logs
       - /var/run/docker.sock:/var/run/docker.sock
       - /opt/buildagent/work:/buildagent/work
       - /opt/buildagent/temp:/buildagent/temp
@@ -16,4 +17,4 @@ services:
 
     environment:
       - TZ=Asia/Seoul
-      - SERVER_URL=http://192.168.0.10:8111/
+      - SERVER_URL=http://192.168.0.20:8111/
